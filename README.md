@@ -6,5 +6,6 @@ Helps in building a starter template to getting started with [cyclops](https://g
 - Creates the base directories for config, database and router
 
 ## How to run?
-- Download the appropriate binary from `bin` directory with respect to your operating system
+- Download the last `bin.zip` from `Releases` tab in github. 
+- Extract the zip file and choose the binary with respect to your operating system
 - Once downloaded, Run `./cyclops-cli -bootstrap {PATH TO PROJECT}`
