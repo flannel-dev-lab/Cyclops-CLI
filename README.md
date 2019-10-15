@@ -1,5 +1,7 @@
 # Cyclops CLI
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/flannel-dev-lab/Cyclops-CLI)](https://goreportcard.com/report/github.com/flannel-dev-lab/Cyclops-CLI)
+
 Helps in building a starter template to getting started with [cyclops](https://github.com/flannel-dev-lab/cyclops)
 
 ## Features
