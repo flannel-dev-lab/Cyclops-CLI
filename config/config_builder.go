@@ -63,24 +63,24 @@ func generateConfigurationGoFiles(path string) (err error) {
 
 	d1 := []byte(`package config
 
-					import "errors"
+import "errors"
 					
-					type ConfigurationService interface {
-						ParseConfigFile(filePath string) error
-						GetListenerAddress() string
-					}
+type ConfigurationService interface {
+	ParseConfigFile(filePath string) error
+	GetListenerAddress() string
+}
 					
-					// Retrieves configuration Object based on the file type
-					func CreateConfiguration(fileType string) (ConfigurationService, error) {
-						switch fileType {
-						case "yaml":
-							return new(YAMLConfiguration), nil
-						default:
-							return nil, errors.New("undefined file type")
-						}
-					}
+// Retrieves configuration Object based on the file type
+func CreateConfiguration(fileType string) (ConfigurationService, error) {
+	switch fileType {
+		case "yaml":
+			return new(YAMLConfiguration), nil
+		default:
+			return nil, errors.New("undefined file type")
+	}
+}
 					
-					`)
+`)
 	err = ioutil.WriteFile(filepath.Clean(fmt.Sprintf("%s/configuration_service.go", path)), d1, 0644)
 	if err != nil {
 		return err

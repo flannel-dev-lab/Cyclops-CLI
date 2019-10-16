@@ -4,6 +4,7 @@ import (
 	"CyclopsCLI/config"
 	"CyclopsCLI/database"
 	"CyclopsCLI/router"
+	"CyclopsCLI/static"
 	"flag"
 	"fmt"
 	"log"
@@ -25,6 +26,10 @@ func main() {
 		}
 
 		if err := router.BuildRouter(*bootstrapPath); err != nil {
+			log.Fatal(err)
+		}
+
+		if err := static.BuildStaticDirectories(*bootstrapPath); err != nil {
 			log.Fatal(err)
 		}
 
