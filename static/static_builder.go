@@ -7,16 +7,14 @@ import (
 )
 
 func BuildStaticDirectories(path string) (err error) {
-	path = filepath.Clean(fmt.Sprintf("%s/templates", path))
-	if _, err := os.Stat(path); os.IsNotExist(err) {
+	if _, err := os.Stat(filepath.Clean(fmt.Sprintf("%s/templates", path))); os.IsNotExist(err) {
 		err = os.MkdirAll(path, 0755)
 		if err != nil {
 			return err
 		}
 	}
 
-	path = filepath.Clean(fmt.Sprintf("%s/static", path))
-	if _, err := os.Stat(path); os.IsNotExist(err) {
+	if _, err := os.Stat(filepath.Clean(fmt.Sprintf("%s/static", path))); os.IsNotExist(err) {
 		err = os.MkdirAll(path, 0755)
 		if err != nil {
 			return err
