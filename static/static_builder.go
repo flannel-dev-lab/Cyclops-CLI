@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 )
 
+// BuildStaticDirectories Will build the templates and static directories in the provided path
 func BuildStaticDirectories(path string) (err error) {
 	if _, err := os.Stat(filepath.Clean(fmt.Sprintf("%s/templates", path))); os.IsNotExist(err) {
 		err = os.MkdirAll(path, 0755)
